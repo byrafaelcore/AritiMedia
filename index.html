@@ -8,18 +8,24 @@
 <body>
     <main>
         <section>
+            <p id="mensagem"></p>
             <h1>Calculador de Notas</h1>
             <p>forneça os resultados das suas notas e veja se está aprovado ou não!</p>
         </section>
         <section>
             <form id="formNotas">
+                <h3>Configurações de avaliação</h3>
                 <label for="qtdNotas">Quantidade de notas:</label>
                 <input type="number" name="qtdnotas" id="qtdNotas"><br>
-                <label for="mediaMateria">Média para passar:</label>
+                <label for="mediaMateria">Média mínima:</label>
                 <input type="number" name="media" id="mediaMateria"><br>
                 <button type="button" id="btnConfigAv">confirmar</button>
             </form>
         </section>
+        <section>
+            <form id="campoNotas"></form>
+        </section>
+        <section id="resultado"></section>
     </main>
 </body>
 <script src="script.js"></script>
