@@ -190,9 +190,6 @@ Estas limitações foram identificadas na leitura do código:
 - **Resultado anterior permanece:** ao confirmar uma nova configuração, os campos de notas são recriados, mas o conteúdo de `#campoResultado` não é limpo.
 - **Campos anteriores permanecem após erro:** se uma nova configuração for inválida, os campos gerados antes continuam na tela.
 - **Média mínima lida no momento do cálculo:** o valor de `mediaMateria` é lido ao enviar as notas, e não ao confirmar a configuração. Se o usuário alterar esse campo depois de gerar as notas, o novo valor será usado sem nova validação. A quantidade de notas, ao contrário, fica guardada ao confirmar.
-- **Texto repetido no resultado positivo:** o título e a mensagem começam com "Parabéns!".
-- **Organização do HTML:** a tag `<script>` está depois do fechamento de `</body>`.
-- **Fonte sem alternativa:** `font-family: "Inter"` não define fontes de reserva.
 
 ## Melhorias Futuras 🚀
  
