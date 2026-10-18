@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon/Favicon_CalculadorDeNotas.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/Favicon_CalculadorDeNotas.png" type="image/x-icon">
     <title>Aritimédia</title>
 </head>
 <body>
     <main>
         <section class="inicio">
-            <p id="mensagem"></p>
-            <h1>Calculador de Notas</h1>
+            <div class="boxMensagem">
+                <p id="mensagem"></p>
+            </div>
+            <h1>AritiMédia</h1>
+            <h2>Calculador de média aritimética</h2>
             <p>forneça os resultados das suas notas e veja se está aprovado ou não!</p>
         </section>
         <section>
             <form id="formNotas">
                 <h3>Configurações de avaliação</h3>
                 <label for="qtdNotas">Quantidade de notas:</label>
-                <input type="number" name="qtdnotas" id="qtdNotas"><br>
+                <input type="number" name="qtdnotas" id="qtdNotas" placeholder="Adicione a quantidade de notas que serão fornecidas"><br>
                 <label for="mediaMateria">Média mínima:</label>
-                <input type="number" name="media" id="mediaMateria"><br>
+                <input type="number" name="media" id="mediaMateria" placeholder="Adicione o valor da média que será comparada"><br>
                 <button type="button" id="btnConfigAv">confirmar</button>
             </form>
         </section>

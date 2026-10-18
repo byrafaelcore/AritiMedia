@@ -6,8 +6,10 @@ let contNotas;
 
 function configurarAvaliacao() {
     let mensagem = document.querySelector("#mensagem");
+    let boxMensagem = document.querySelector(".boxMensagem");
     if ((qtdNotas.value <= 0 || mediaMateria.value <= 0 || qtdNotas.value === '' || mediaMateria.value === '') || Number(qtdNotas.value) % 1 !== 0) {
         mensagem.textContent = "Erro! Insira valores válidos.";
+        boxMensagem.appendChild(mensagem);
         return false;
     } else {
         mensagem.textContent = "";

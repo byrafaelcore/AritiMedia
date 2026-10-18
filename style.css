@@ -1,39 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
+    margin: 0;
     padding: 0;
-    margin: 20;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
-html {
-    background-color: #FF0017;
+:root {
+    --vermelho: #FF0017;
+    --amarelo: #FFFD87;
+    --creme: #F2F0C5;
+    --branco: #FFFFFF;
+    --texto: #292929;
 }
+
+body {
+    font-family: "Inter";
+    background-color: var(--creme);
+    color: var(--texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+/* SEÇÃO INICIAL */
 
 .inicio {
-    height: 100vh;
-    background-image: url("img/calculadora-vermelha.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    min-height: 350px;
+    padding: 70px 20px;
+    background-color: var(--vermelho);
+    color: var(--branco);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    padding: 20px;
 }
 
 .inicio h1 {
-    font-size: 100px;
-    color: #FF0017;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.389);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.inicio h2 {
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
 }
 
 .inicio p {
-    font-family: "Overwatch";
-    font-size: 30px;
+    max-width: 600px;
+    font-size: 1.05rem;
+}
+
+#mensagem {
+    color: var(--amarelo);
+    font-weight: bold;
+    margin-bottom: 10px;
     text-align: center;
-    color: #000000;
+}
+
+.boxMensagem {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 55px;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* FORMULÁRIO DE CONFIGURAÇÃO */
+
+#formNotas {
+    width: min(90%, 500px);
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--branco);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formNotas h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+label {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 2px solid #DEDEDE;
+    border-radius: 8px;
+    background-color: var(--branco);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--vermelho);
+    box-shadow: 0 0 0 3px rgba(255, 0, 23, 0.12);
+}
+
+/* BOTÕES */
+
+button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #D90014;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#btnConfigAv {
+    margin-top: 12px;
+}
+
+/* CAMPOS DAS NOTAS */
+
+#campoNotas {
+    width: min(90%, 700px);
+    margin: 0 auto 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notasContainer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.notaBox {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.notaBox label {
+    color: var(--texto);
+}
+
+.inputNota {
+    width: 100%;
+}
+
+#btnCampoNotas {
+    align-self: center;
+    min-width: 180px;
+}
+
+/* RESULTADO */
+
+#campoResultado {
+    width: min(90%, 700px);
+    margin: 0 auto;
+}
+
+.resultadosContainer {
+    padding: 30px;
+    background-color: var(--branco);
+    border-radius: 16px;
+    border-left: 6px solid var(--vermelho);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+#h3Mensagem {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+}
+
+#pMensagem {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+#mensagemErro {
+    color: var(--vermelho);
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .inicio {
+        min-height: 300px;
+        padding: 50px 20px;
+    }
+
+    .inicio p {
+        font-size: 0.95rem;
+    }
+
+    #formNotas {
+        padding: 22px;
+        margin: 25px auto;
+    }
+
+    .notasContainer {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .notaBox {
+        padding: 15px;
+    }
+
+    .resultadosContainer {
+        padding: 22px;
+    }
+
+    #h3Mensagem {
+        font-size: 1.35rem;
+    }
 }
